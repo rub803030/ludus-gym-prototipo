@@ -60,7 +60,9 @@ ludus-gym-prototipo/
 
 ## Sistema de diseño
 
-Se adapta el sistema **Kinetic Obsidian** incluido en el material original: fondos carbono (`#0D0F12`), acentos lima (`#CCFF00`), naranja (`#FF5500`) y verde menta (`#10B981`), tipografías Montserrat/Inter, tarjetas de cristal y glows sutiles.
+Revisión **Terminal / edición 2026** del sistema original. Superficies con temperatura (`#0e1113` → `#232a2f`), bordes de 1 px con bajo contraste y un único acento funcional (`#c7f04a`). El verde y el naranja quedan reducidos a señales semánticas, sin halos. Tipografía con tres registros: `Space Grotesk` para títulos y métricas, `Inter` para cuerpo e `IBM Plex Mono` para metadatos, IDs y cifras tabulares. Layout asimétrico sobre retícula de 4 px, tres radios de esquina y transiciones de 150 ms con `cubic-bezier`.
+
+Incluye estados reales: foco visible, hover/active, botones deshabilitados por monto insuficiente, skeleton de arranque, búsqueda sin resultados con acción, `aria-current`, `aria-pressed`, `role="tab"` y soporte para `prefers-reduced-motion`.
 
 > Nota: los datos (socio #0249, folio #REC-2024-08925, montos, fechas) son de demostración y provienen de los diseños de referencia.
 

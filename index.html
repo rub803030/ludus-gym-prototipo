@@ -1,106 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Prototipo navegable de Ludus Gym: gestión de gimnasio para socios y administradores." />
-  <title>Ludus Gym · Prototipo de gestión</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Terminal de operación Ludus Gym: accesos, cobros y expedientes en un solo flujo.">
+  <title>Ludus Gym · Terminal de operación</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#screen">Saltar a la vista activa</a>
+
   <div class="app">
     <header class="topbar">
       <div class="brand">
-        <div class="brand__logo">L</div>
-        <div>
-          <h1>Ludus Gym</h1>
-          <p>Gestión integral · Sede Central</p>
-        </div>
+        <span class="brand__mark" aria-hidden="true">L</span>
+        <span class="brand__id">
+          <strong>LUDUS<span>/GYM</span></strong>
+          <span class="meta">OPERACIÓN · SEDE CENTRAL</span>
+        </span>
       </div>
-      <div class="topbar__right">
-        <span class="version-badge">Prototipo v0.1</span>
-        <div class="role-switch" aria-label="Cambiar vista">
-          <button type="button" data-action="role" data-role="socio">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            Vista Socio
-          </button>
-          <button type="button" data-action="role" data-role="admin">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
-            Vista Admin
-          </button>
-        </div>
+      <div class="topbar__tools">
+        <span class="build">BUILD 0.1 · DEMO</span>
+        <nav class="segment" aria-label="Seleccionar vista">
+          <button type="button" data-action="role" data-role="socio" aria-pressed="true">SOCIO</button>
+          <button type="button" data-action="role" data-role="admin" aria-pressed="false">ADMIN</button>
+        </nav>
       </div>
     </header>
 
     <div class="workspace">
-      <aside class="sidebar" aria-label="Navegación del prototipo">
-        <div class="sidebar__nav">
-          <div class="nav-group">
-            <p class="nav-group__label">Vista Socio</p>
-            <button class="nav-item" type="button" data-action="go" data-role="socio" data-screen="socio-home">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM21 14v3M14 21h3M21 21h.01"/></svg>
-              Inicio / QR
-            </button>
-            <button class="nav-item" type="button" data-action="go" data-role="socio" data-screen="socio-routine">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6M8 7v10M16 7v10M20 9v6M8 12h8"/></svg>
-              Rutina y pesos
-            </button>
-            <button class="nav-item" type="button" data-action="go" data-role="socio" data-screen="socio-nutrition">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7a3 3 0 0 0 6 0V2M6 2v20M17 2c-2 2-3 5-3 9h6c0-4-1-7-3-9ZM17 11v11"/></svg>
-              Nutrición
-            </button>
-            <button class="nav-item" type="button" data-action="go" data-role="socio" data-screen="socio-bookings">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-              Reservas Hyrox
-            </button>
-          </div>
-          <div class="nav-group">
-            <p class="nav-group__label">Vista Admin</p>
-            <button class="nav-item" type="button" data-action="go" data-role="admin" data-screen="admin-dashboard">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 16 4-5 4 3 5-7"/></svg>
-              Panel y cobranza
-            </button>
-            <button class="nav-item" type="button" data-action="go" data-role="admin" data-screen="admin-register">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
-              Registro y cobro
-            </button>
-            <button class="nav-item" type="button" data-action="go" data-role="admin" data-screen="admin-member">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
-              Expediente
-            </button>
-            <button class="nav-item" type="button" data-action="go" data-role="admin" data-screen="admin-receipt">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14v18l-3-2-4 2-4-2-3 2V3Z"/><path d="M9 8h6M9 12h6"/></svg>
-              Recibo y QR
-            </button>
-          </div>
-        </div>
-        <p class="sidebar__foot">
-          <strong>Tip:</strong> usa el menú para recorrer los 8 flujos del prototipo. Los datos son de demostración.
-        </p>
+      <aside class="rail" aria-label="Flujos del prototipo">
+        <nav class="rail__group" aria-label="Flujos de socio">
+          <p class="rail__label">01 / SOCIO</p>
+          <button type="button" data-action="go" data-role="socio" data-screen="socio-home">Acceso <span class="idx">01</span></button>
+          <button type="button" data-action="go" data-role="socio" data-screen="socio-routine">Rutina y carga <span class="idx">02</span></button>
+          <button type="button" data-action="go" data-role="socio" data-screen="socio-nutrition">Nutrición <span class="idx">03</span></button>
+          <button type="button" data-action="go" data-role="socio" data-screen="socio-bookings">Reservas <span class="idx">04</span></button>
+        </nav>
+        <nav class="rail__group" aria-label="Flujos de administración">
+          <p class="rail__label">02 / OPERACIÓN</p>
+          <button type="button" data-action="go" data-role="admin" data-screen="admin-dashboard">Cobranza <span class="idx">05</span></button>
+          <button type="button" data-action="go" data-role="admin" data-screen="admin-register">Alta de socio <span class="idx">06</span></button>
+          <button type="button" data-action="go" data-role="admin" data-screen="admin-member">Expediente <span class="idx">07</span></button>
+          <button type="button" data-action="go" data-role="admin" data-screen="admin-receipt">Recibo <span class="idx">08</span></button>
+        </nav>
+        <p class="rail__foot">DATOS FICTICIOS · SOLO DEMO</p>
       </aside>
 
       <main class="stage">
         <div class="device">
-          <div class="device__notch" aria-hidden="true"></div>
-          <div class="screen-scroll" id="screen"></div>
+          <div class="device__bar" aria-hidden="true"><span class="mono">09:41</span><span class="mono">T-01 / LECTOR ACTIVO</span></div>
+          <div class="screen" id="screen" tabindex="-1"></div>
         </div>
       </main>
     </div>
   </div>
 
-  <div class="modal-overlay" id="qr-modal" hidden>
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="qr-modal-title">
-      <div id="qr-modal-content"></div>
-      <h3 id="qr-modal-title">Credencial de acceso</h3>
-      <p>Acércate al lector óptico del torniquete. Código <strong>LUDUS-PASS-0249</strong>.</p>
-      <button class="btn btn--primary btn--block" type="button" data-action="close-modal">Entendido</button>
-    </div>
-  </div>
+  <dialog class="sheet" id="pass-dialog" aria-labelledby="pass-title">
+    <p class="meta" id="pass-title">CREDENCIAL / SOCIO 0249</p>
+    <div id="pass-qr"></div>
+    <h2>LUDUS-PASS-0249</h2>
+    <p>Presenta el código al lector del torniquete 01. Se renueva cada 18 segundos.</p>
+    <button type="button" class="btn btn--primary btn--block" data-action="close-dialog">Cerrar</button>
+  </dialog>
 
-  <div class="toast-stack" id="toasts" aria-live="polite"></div>
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
 
   <script src="assets/app.js"></script>
 </body>
