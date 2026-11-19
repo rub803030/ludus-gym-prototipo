@@ -1,0 +1,22 @@
+{
+  "name": "Ludus Gym · Terminal de operación",
+  "short_name": "Ludus Gym",
+  "description": "Accesos, rutinas, reservas y cobranza de Ludus Gym en una sola terminal.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0e1113",
+  "theme_color": "#0e1113",
+  "lang": "es-MX",
+  "categories": ["business", "productivity", "health"],
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Control de acceso", "short_name": "Acceso", "url": "./?view=socio-home", "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Cobranza", "short_name": "Cobranza", "url": "./?view=admin-dashboard", "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
