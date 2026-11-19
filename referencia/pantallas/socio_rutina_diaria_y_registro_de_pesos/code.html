@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rutinas &amp; Entrenamiento - Ludus Gym</title>
+<!-- Google Fonts: Montserrat & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Montserrat:wght@500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config verbatum -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#ffffff",
+            "secondary-fixed": "#ffdbcf",
+            "secondary-fixed-dim": "#ffb59c",
+            "surface-container-highest": "#333538",
+            "primary-container": "#c3f400",
+            "on-tertiary-fixed-variant": "#005236",
+            "tertiary-container": "#6ffbbe",
+            "surface-tint": "#abd600",
+            "surface-container-high": "#282a2d",
+            "surface-container": "#1e2023",
+            "tertiary": "#ffffff",
+            "surface": "#111317",
+            "surface-dim": "#111317",
+            "on-secondary-fixed": "#390c00",
+            "tertiary-fixed": "#6ffbbe",
+            "on-secondary-fixed-variant": "#822700",
+            "inverse-primary": "#506600",
+            "background": "#111317",
+            "on-tertiary-container": "#00734e",
+            "on-primary": "#283500",
+            "error": "#ffb4ab",
+            "on-secondary-container": "#511500",
+            "outline-variant": "#444933",
+            "on-secondary": "#5c1900",
+            "surface-bright": "#37393d",
+            "on-tertiary-fixed": "#002113",
+            "on-error": "#690005",
+            "inverse-surface": "#e2e2e6",
+            "secondary-container": "#ff5708",
+            "on-surface": "#e2e2e6",
+            "outline": "#8e9379",
+            "surface-container-lowest": "#0c0e11",
+            "inverse-on-surface": "#2f3034",
+            "on-primary-container": "#556d00",
+            "primary-fixed-dim": "#abd600",
+            "error-container": "#93000a",
+            "on-tertiary": "#003824",
+            "surface-container-low": "#1a1c1f",
+            "on-primary-fixed-variant": "#3c4d00",
+            "on-surface-variant": "#c4c9ac",
+            "surface-variant": "#333538",
+            "on-error-container": "#ffdad6",
+            "on-background": "#e2e2e6",
+            "tertiary-fixed-dim": "#4edea3",
+            "primary-fixed": "#c3f400",
+            "on-primary-fixed": "#161e00",
+            "secondary": "#ffb59c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-desktop": "3rem",
+            "margin": "1rem",
+            "space-md": "1rem",
+            "gutter-tablet": "1.5rem",
+            "space-lg": "1.5rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "margin-tablet": "2rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.5rem",
+            "gutter-desktop": "2rem"
+          },
+          "fontFamily": {
+            "body-md": ["Inter"],
+            "headline-sm": ["Montserrat"],
+            "label-caps": ["Montserrat"],
+            "metric-numeral-lg": ["Montserrat"],
+            "label-interactive": ["Inter"],
+            "body-sm": ["Inter"],
+            "display-hero": ["Montserrat"],
+            "display-hero-mobile": ["Montserrat"],
+            "metric-numeral-sm": ["Montserrat"],
+            "body-lg": ["Inter"],
+            "headline-lg": ["Montserrat"],
+            "headline-md": ["Montserrat"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "metric-numeral-lg": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+            "label-interactive": ["14px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "display-hero": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "metric-numeral-sm": ["20px", { "lineHeight": "24px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined[data-weight="fill"] {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Hide scrollbars for slick mobile tabs */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen pb-32">
+<!-- ================= TOP APP BAR (Shared Component Anchor) ================= -->
+<header class="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-margin py-space-sm w-full bg-surface/90 dark:bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+<div class="flex items-center gap-space-sm">
+<div class="relative w-9 h-9 rounded-full overflow-hidden border border-outline-variant/40 bg-surface-container flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="High performance male gym coach Irving Contreras headshot with focused athletic expression in low key dark studio lighting and subtle lime reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIlgNnlRco0IMRCtY5bUmfD2-2vmjdl2O8VnEeVA_hzMTHSRPei5Oc3Q1jkT9UhiFvQ4NPzFPT16YY1n-_w0qhoZVTNNwMAqCL-K5_f8GDfYVdQeS0bajYrGFE4Q2k0QrWArdIUeUUzi6ud0CGSUULXiIaGt6dUYSd4wi8Yb5Sj2ZBd_7V8DRwQBN7r5aQUI7YFFKMKo-wd1yHCZQKir275zGjoBlJ2BklXR7w2qc"/>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<img alt="Ludus Gym Logo" class="h-4 object-contain filter brightness-110" src="https://lh3.googleusercontent.com/aida/AEtjO1UlbmWNA9cLdug8seH_Esf3HoqSD63wUITSow042Ho2qcnjx9TRrQG06kSzW1eODe9R7UqHCvs73CwQbo6D8bPkxXVq70YCp43oL9Rt9tbDh0ceYA03DH-4v1jb5XzqL_wfzRTLDjbX_sZvHOT94iJMp1lFIIERfe6luJUDKXWa_BnLmjnlbMOmKMk_hzJ5Xw_aW9yD0AJ57cl9mw5KyMMkORg7URSABhB2z_klpsc"/>
+<span class="font-headline-sm text-headline-sm font-extrabold uppercase tracking-wider text-on-surface">Ludus Gym</span>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Socio Activo • Nivel Pro</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Notificaciones" class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-variant/40 hover:text-on-surface transition-colors active:scale-95 duration-150 relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-fixed shadow-[0_0_8px_#c3f400]"></span>
+</button>
+</div>
+</header>
+<!-- Spacer for fixed top bar -->
+<div class="h-16"></div>
+<!-- MAIN PERFORMANCE CANVAS -->
+<main class="max-w-4xl mx-auto px-margin pt-space-md space-y-space-lg">
+<!-- HERO HEADER: Current Session Title & Athletic Badge -->
+<section class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high border border-outline-variant/40 text-on-surface-variant font-label-caps text-label-caps">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed shadow-[0_0_8px_#6ffbbe]"></span>
+          FASE DE FUERZA HIPERTROFIA
+        </span>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-base" data-icon="verified_user">verified_user</span>
+<span>Coach Irving C.</span>
+</div>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">
+        Día 3: Empuje &amp; Core
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Pecho, Deltoides Anterior y Tríceps. Sesión de tensión mecánica y control excéntrico.
+      </p>
+</section>
+<!-- WEEKLY HORIZONTAL SELECTOR (Lunes a Sábado) -->
+<nav class="relative -mx-margin px-margin overflow-x-auto no-scrollbar py-1">
+<div class="flex items-center gap-2.5 min-w-max">
+<!-- Lun -->
+<button class="flex flex-col items-center justify-center w-14 py-2.5 rounded-lg bg-surface-container-low border border-outline-variant/30 text-on-surface-variant active:scale-95 transition-all">
+<span class="font-label-caps text-label-caps text-on-surface-variant">LUN</span>
+<span class="font-metric-numeral-sm text-metric-numeral-sm text-on-surface mt-0.5">21</span>
+<span class="w-1 h-1 rounded-full bg-surface-tint mt-1"></span>
+</button>
+<!-- Mar -->
+<button class="flex flex-col items-center justify-center w-14 py-2.5 rounded-lg bg-surface-container-low border border-outline-variant/30 text-on-surface-variant active:scale-95 transition-all">
+<span class="font-label-caps text-label-caps text-on-surface-variant">MAR</span>
+<span class="font-metric-numeral-sm text-metric-numeral-sm text-on-surface mt-0.5">22</span>
+<span class="w-1 h-1 rounded-full bg-surface-tint mt-1"></span>
+</button>
+<!-- Mié (ACTIVE TODAY) -->
+<button class="flex flex-col items-center justify-center w-16 py-2.5 rounded-lg bg-surface-container-high border-2 border-primary-fixed text-primary-fixed shadow-[0_0_16px_rgba(195,244,0,0.22)] active:scale-95 transition-all">
+<span class="font-label-caps text-label-caps text-primary-fixed font-bold">HOY</span>
+<span class="font-metric-numeral-sm text-metric-numeral-sm text-primary-fixed mt-0.5 font-extrabold">23</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed mt-1 animate-pulse"></span>
+</button>
+<!-- Jue -->
+<button class="flex flex-col items-center justify-center w-14 py-2.5 rounded-lg bg-surface-container-low border border-outline-variant/30 text-on-surface-variant active:scale-95 transition-all">
+<span class="font-label-caps text-label-caps text-on-surface-variant">JUE</span>
+<span class="font-metric-numeral-sm text-metric-numeral-sm text-on-surface mt-0.5">24</span>
+<span class="w-1 h-1 rounded-full bg-surface-container-highest mt-1"></span>
+</button>
+<!-- Vie -->
+<button class="flex flex-col items-center justify-center w-14 py-2.5 rounded-lg bg-surface-container-low border border-outline-variant/30 text-on-surface-variant active:scale-95 transition-all">
+<span class="font-label-caps text-label-caps text-on-surface-variant">VIE</span>
+<span class="font-metric-numeral-sm text-metric-numeral-sm text-on-surface mt-0.5">25</span>
+<span class="w-1 h-1 rounded-full bg-surface-container-highest mt-1"></span>
+</button>
+<!-- Sáb -->
+<button class="flex flex-col items-center justify-center w-14 py-2.5 rounded-lg bg-surface-container-low border border-outline-variant/30 text-on-surface-variant active:scale-95 transition-all">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SÁB</span>
+<span class="font-metric-numeral-sm text-metric-numeral-sm text-on-surface mt-0.5">26</span>
+<span class="w-1 h-1 rounded-full bg-surface-container-highest mt-1"></span>
+</button>
+</div>
+</nav>
+<!-- WORKOUT TELEMETRY & BENTO METRICS PANEL -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-space-sm">
+<!-- Metric 1: Time -->
+<div class="bg-surface-container-low border border-white/5 rounded-xl p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps">DURACIÓN ESTIMADA</span>
+<span class="material-symbols-outlined text-sm text-primary-fixed" data-icon="timer">timer</span>
+</div>
+<div class="mt-2">
+<span class="font-metric-numeral-lg text-metric-numeral-lg text-primary tracking-tight">55</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant ml-1">MIN</span>
+</div>
+</div>
+<!-- Metric 2: RPE -->
+<div class="bg-surface-container-low border border-white/5 rounded-xl p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps">ESFUERZO RPE</span>
+<span class="material-symbols-outlined text-sm text-secondary-container" data-icon="local_fire_department">local_fire_department</span>
+</div>
+<div class="mt-2">
+<span class="font-metric-numeral-lg text-metric-numeral-lg text-secondary-container tracking-tight">8.5</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant ml-1">/ 10</span>
+</div>
+</div>
+<!-- Metric 3: Total Load Volume -->
+<div class="bg-surface-container-low border border-white/5 rounded-xl p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps">VOLUMEN PROYECTADO</span>
+<span class="material-symbols-outlined text-sm text-primary-fixed" data-icon="monitoring">monitoring</span>
+</div>
+<div class="mt-2">
+<span class="font-metric-numeral-lg text-metric-numeral-lg text-primary tracking-tight">3,240</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant ml-1">KG</span>
+</div>
+</div>
+<!-- Metric 4: Rest Interval -->
+<div class="bg-surface-container-low border border-white/5 rounded-xl p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps">DESCANSO SUGERIDO</span>
+<span class="material-symbols-outlined text-sm text-tertiary-fixed" data-icon="timelapse">timelapse</span>
+</div>
+<div class="mt-2">
+<span class="font-metric-numeral-lg text-metric-numeral-lg text-primary tracking-tight">90</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant ml-1">SEG</span>
+</div>
+</div>
+</section>
+<!-- PROGRESS BAR CARD -->
+<section class="bg-surface-container p-space-md rounded-xl border border-white/10 flex flex-col gap-space-sm backdrop-blur-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="task_alt">task_alt</span>
+<span class="font-label-interactive text-label-interactive text-primary font-bold">Progreso de la Rutina</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary-fixed font-bold tracking-wider">1 DE 4 COMPLETADOS (25%)</span>
+</div>
+<!-- Track -->
+<div class="w-full h-2.5 rounded-full bg-surface-container-highest overflow-hidden p-0.5">
+<div class="h-full rounded-full bg-primary-fixed shadow-[0_0_12px_#c3f400] transition-all duration-500 w-1/4"></div>
+</div>
+</section>
+<!-- EXERCISES LIST SECTION -->
+<section class="space-y-space-md">
+<div class="flex items-center justify-between pt-2">
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="fitness_center">fitness_center</span>
+          Bloques de Trabajo
+        </h2>
+<span class="font-label-caps text-label-caps text-on-surface-variant">4 EJERCICIOS TOTAL</span>
+</div>
+<!-- EXERCISE 1 (COMPLETED) -->
+<article class="bg-surface-container-low border border-tertiary-fixed/30 rounded-xl p-space-md space-y-space-md relative overflow-hidden transition-all">
+<div class="absolute top-0 left-0 w-1 h-full bg-tertiary-fixed shadow-[0_0_8px_#6ffbbe]"></div>
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-tertiary-fixed font-label-caps text-label-caps">COMPLETADO</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">BLOQUE A1</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">
+              1. Press de Banca Plano con Barra
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              4 series × 10 repeticiones • Carga objetivo: 70 kg
+            </p>
+</div>
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed/20 border border-tertiary-fixed flex items-center justify-center text-tertiary-fixed shadow-[0_0_10px_rgba(111,251,190,0.3)]">
+<span class="material-symbols-outlined text-lg" data-icon="check" data-weight="fill">check</span>
+</div>
+</div>
+<!-- Telemetry Log Fields (Read Only / Checked State) -->
+<div class="grid grid-cols-2 gap-space-sm bg-surface-container/60 p-space-sm rounded-lg border border-white/5">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">PESO LOGRADO</label>
+<div class="flex items-center gap-1.5 font-body-md text-body-md text-primary font-semibold">
+<span class="material-symbols-outlined text-sm text-tertiary-fixed" data-icon="scale">scale</span>
+<span>72.5 kg</span>
+</div>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">REPETICIONES</label>
+<div class="flex items-center gap-1.5 font-body-md text-body-md text-primary font-semibold">
+<span class="material-symbols-outlined text-sm text-tertiary-fixed" data-icon="repeat">repeat</span>
+<span>10 - 10 - 10 - 9 reps</span>
+</div>
+</div>
+</div>
+</article>
+<!-- EXERCISE 2 (ACTIVE / IN-PROGRESS INTERACTIVE) -->
+<article class="bg-surface-container border-2 border-primary-fixed/60 rounded-xl p-space-md space-y-space-md shadow-[0_4px_24px_rgba(195,244,0,0.08)] relative overflow-hidden">
+<div class="absolute top-0 right-0 px-3 py-1 bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps rounded-bl-lg font-bold">
+          SERIE ACTUAL 2/3
+        </div>
+<div class="pr-20">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded bg-primary-fixed/20 text-primary-fixed font-label-caps text-label-caps">EN CURSO</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">BLOQUE A2</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">
+            2. Press Militar con Mancuernas (Banco 75°)
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            3 series × 12 reps • 22 kg por mancuerna sugerido
+          </p>
+</div>
+<!-- Series Pill Selector -->
+<div class="flex items-center gap-2">
+<button class="flex-1 py-1.5 rounded bg-surface-container-high border border-outline-variant/40 font-label-caps text-label-caps text-tertiary-fixed flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="done">done</span> S1: 22kg × 12
+          </button>
+<button class="flex-1 py-1.5 rounded bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps font-extrabold shadow-[0_0_12px_rgba(195,244,0,0.3)]">
+            S2: ACTIVA
+          </button>
+<button class="flex-1 py-1.5 rounded bg-surface-container-low border border-white/5 font-label-caps text-label-caps text-on-surface-variant">
+            S3: PENDIENTE
+          </button>
+</div>
+<!-- Interactive Log Inputs -->
+<div class="grid grid-cols-2 gap-space-sm pt-1">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1.5">PESO REAL (KG/LADO)</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant/50 focus:border-primary-fixed focus:ring-1 focus:ring-primary-fixed text-primary font-metric-numeral-sm text-metric-numeral-sm rounded-lg px-3 py-2 text-center transition-colors" step="0.5" type="number" value="22"/>
+<span class="absolute right-3 top-2.5 font-label-caps text-label-caps text-on-surface-variant">KG</span>
+</div>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1.5">REPS REALES</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant/50 focus:border-primary-fixed focus:ring-1 focus:ring-primary-fixed text-primary font-metric-numeral-sm text-metric-numeral-sm rounded-lg px-3 py-2 text-center transition-colors" type="number" value="12"/>
+<span class="absolute right-3 top-2.5 font-label-caps text-label-caps text-on-surface-variant">REPS</span>
+</div>
+</div>
+</div>
+<!-- Action inside Card -->
+<button class="w-full py-2.5 rounded-lg bg-surface-container-highest hover:bg-surface-variant text-primary-fixed border border-primary-fixed/40 font-label-interactive text-label-interactive flex items-center justify-center gap-2 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-base" data-icon="check_circle">check_circle</span>
+          Registrar Serie 2 &amp; Iniciar Cronómetro (90s)
+        </button>
+</article>
+<!-- EXERCISE 3 (PENDING) -->
+<article class="bg-surface-container-low border border-white/10 rounded-xl p-space-md space-y-space-md opacity-90 hover:opacity-100 transition-opacity">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-caps text-label-caps">PENDIENTE</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">BLOQUE B1</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">
+              3. Fondos en Paralelas con Lastre
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              3 series al fallo técnico (+10 kg sugerido en cinturón)
+            </p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-xl" data-icon="hourglass_empty">hourglass_empty</span>
+</div>
+<!-- Inputs template -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">LASTRE ADICIONAL</label>
+<input class="w-full bg-surface-container-lowest border border-white/10 focus:border-primary-fixed text-primary font-body-md text-body-md rounded-lg px-3 py-2 text-center" placeholder="+10 kg" type="text"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">REPS AL FALLO</label>
+<input class="w-full bg-surface-container-lowest border border-white/10 focus:border-primary-fixed text-primary font-body-md text-body-md rounded-lg px-3 py-2 text-center" placeholder="ej. 11 reps" type="text"/>
+</div>
+</div>
+</article>
+<!-- EXERCISE 4 (SUPERSET PENDING) -->
+<article class="bg-surface-container-low border border-white/10 rounded-xl p-space-md space-y-space-md opacity-85 hover:opacity-100 transition-opacity">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded bg-secondary-container/20 text-secondary-container font-label-caps text-label-caps font-bold">SUPER-SERIE CORE</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">BLOQUE C1 &amp; C2</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">
+              4. Rueda Abdominal + Plancha Isométrica
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              4 rondas continuas • 12 reps de rueda + 45 seg sostenidos
+            </p>
+</div>
+<span class="material-symbols-outlined text-secondary-container text-xl" data-icon="bolt">bolt</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">RUEDA AB REPS</label>
+<input class="w-full bg-surface-container-lowest border border-white/10 focus:border-primary-fixed text-primary font-body-md text-body-md rounded-lg px-3 py-2 text-center" placeholder="12" type="number"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">TIEMPO PLANCHA</label>
+<input class="w-full bg-surface-container-lowest border border-white/10 focus:border-primary-fixed text-primary font-body-md text-body-md rounded-lg px-3 py-2 text-center" placeholder="45 seg" type="text"/>
+</div>
+</div>
+</article>
+</section>
+<!-- COACH NOTES & INSTRUCTIONS CALLOUT -->
+<section class="bg-surface-container-high border border-outline-variant/30 rounded-xl p-space-md flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex-shrink-0 flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-xl" data-icon="sports">sports</span>
+</div>
+<div class="space-y-1">
+<h4 class="font-headline-sm text-headline-sm text-primary">Nota del Coach Irving Contreras</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          "En el press militar mantén la pelvis neutra y evita arquear la zona lumbar en la última serie. Mantén 2 segundos de pausa excéntrica en el pecho para máxima tensión activa."
+        </p>
+</div>
+</section>
+<!-- FLOATING FINISH CTA -->
+<div class="pt-space-sm pb-space-lg">
+<button class="w-full py-4 rounded-xl bg-primary-fixed text-on-primary-fixed font-headline-sm text-headline-sm font-extrabold flex items-center justify-center gap-2 shadow-[0_8px_24px_-4px_rgba(204,255,0,0.35)] hover:bg-primary-fixed-dim active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-2xl font-bold" data-icon="flag">flag</span>
+        Completar Entrenamiento de Hoy
+      </button>
+</div>
+</main>
+<!-- ================= BOTTOM NAVIGATION BAR (Shared Component Anchor) ================= -->
+<!-- Contextual State: 'Rutinas' is the EXACT match for this screen -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-xs py-space-xs pb-safe bg-surface-container/95 dark:bg-surface-container/95 backdrop-blur-xl border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<!-- Tab 1: Inicio/QR -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant font-label-caps text-label-caps py-1 hover:text-primary-fixed dark:hover:text-primary-fixed transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
+<span class="mt-1">Inicio/QR</span>
+</a>
+<!-- Tab 2: Rutinas (ACTIVE MATCH) -->
+<a class="flex flex-col items-center justify-center text-primary-fixed dark:text-primary-fixed font-label-caps text-label-caps font-bold py-1 active:scale-95 transition-transform duration-150 relative" href="#">
+<span class="material-symbols-outlined" data-icon="fitness_center" data-weight="fill">fitness_center</span>
+<span class="mt-1 font-bold">Rutinas</span>
+<span class="absolute -bottom-0.5 w-6 h-0.5 bg-primary-fixed rounded-full shadow-[0_0_8px_#c3f400]"></span>
+</a>
+<!-- Tab 3: Reservas -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant font-label-caps text-label-caps py-1 hover:text-primary-fixed dark:hover:text-primary-fixed transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+<span class="mt-1">Reservas</span>
+</a>
+<!-- Tab 4: Nutrición -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant font-label-caps text-label-caps py-1 hover:text-primary-fixed dark:hover:text-primary-fixed transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+<span class="mt-1">Nutrición</span>
+</a>
+<!-- Tab 5: Admin -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant font-label-caps text-label-caps py-1 hover:text-primary-fixed dark:hover:text-primary-fixed transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="mt-1">Admin</span>
+</a>
+</nav>
+</body></html>

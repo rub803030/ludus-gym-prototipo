@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Ludus Gym - Reservas de Alto Rendimiento</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:ital,wght@0,600;0,700;0,800;0,900;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#ffffff",
+            "secondary-fixed": "#ffdbcf",
+            "secondary-fixed-dim": "#ffb59c",
+            "surface-container-highest": "#333538",
+            "primary-container": "#c3f400",
+            "on-tertiary-fixed-variant": "#005236",
+            "tertiary-container": "#6ffbbe",
+            "surface-tint": "#abd600",
+            "surface-container-high": "#282a2d",
+            "surface-container": "#1e2023",
+            "tertiary": "#ffffff",
+            "surface": "#111317",
+            "surface-dim": "#111317",
+            "on-secondary-fixed": "#390c00",
+            "tertiary-fixed": "#6ffbbe",
+            "on-secondary-fixed-variant": "#822700",
+            "inverse-primary": "#506600",
+            "background": "#111317",
+            "on-tertiary-container": "#00734e",
+            "on-primary": "#283500",
+            "error": "#ffb4ab",
+            "on-secondary-container": "#511500",
+            "outline-variant": "#444933",
+            "on-secondary": "#5c1900",
+            "surface-bright": "#37393d",
+            "on-tertiary-fixed": "#002113",
+            "on-error": "#690005",
+            "inverse-surface": "#e2e2e6",
+            "secondary-container": "#ff5708",
+            "on-surface": "#e2e2e6",
+            "outline": "#8e9379",
+            "surface-container-lowest": "#0c0e11",
+            "inverse-on-surface": "#2f3034",
+            "on-primary-container": "#556d00",
+            "primary-fixed-dim": "#abd600",
+            "error-container": "#93000a",
+            "on-tertiary": "#003824",
+            "surface-container-low": "#1a1c1f",
+            "on-primary-fixed-variant": "#3c4d00",
+            "on-surface-variant": "#c4c9ac",
+            "surface-variant": "#333538",
+            "on-error-container": "#ffdad6",
+            "on-background": "#e2e2e6",
+            "tertiary-fixed-dim": "#4edea3",
+            "primary-fixed": "#c3f400",
+            "on-primary-fixed": "#161e00",
+            "secondary": "#ffb59c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-desktop": "3rem",
+            "margin": "1rem",
+            "space-md": "1rem",
+            "gutter-tablet": "1.5rem",
+            "space-lg": "1.5rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "margin-tablet": "2rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.5rem",
+            "gutter-desktop": "2rem"
+          },
+          "fontFamily": {
+            "body-md": ["Inter"],
+            "headline-sm": ["Montserrat"],
+            "label-caps": ["Montserrat"],
+            "metric-numeral-lg": ["Montserrat"],
+            "label-interactive": ["Inter"],
+            "body-sm": ["Inter"],
+            "display-hero": ["Montserrat"],
+            "display-hero-mobile": ["Montserrat"],
+            "metric-numeral-sm": ["Montserrat"],
+            "body-lg": ["Inter"],
+            "headline-lg": ["Montserrat"],
+            "headline-md": ["Montserrat"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "metric-numeral-lg": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+            "label-interactive": ["14px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "display-hero": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "metric-numeral-sm": ["20px", { "lineHeight": "24px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed min-h-screen pb-28">
+<!-- TopAppBar (From Shared Component JSON) -->
+<header class="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-margin py-space-sm w-full bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+<div class="flex items-center gap-3">
+<div class="relative w-9 h-9 rounded-full ring-2 ring-primary-fixed/30 overflow-hidden bg-surface-container-high flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Close up athletic portrait of fitness coach Irving Contreras in a high-tech dim training facility with striking neon volt backlighting, sporting focused intensity and wearing sleek dark athletic apparel. High contrast commercial photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr0o5SsfW-CpJ0P5nOxks1euDCIy0frehLbycl7KSpbefv0lgClLVG8jxjmUNRF_T6QA964Zbkp9aS8set3uy9a2HnepmRUNcYLz46WcovencnDtl_0loSTUTTupsndU_Yp37Pq8M2YHhXkw7d2Y7nALyvPzwSI8f9klqYKu7eSh3W6y3l4_5n3yXg_TSuPuvZvLhQDssPu7o_xPZgyvcSRrtq5lenj5yS5aj5bkU"/>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-3.5 bg-primary-fixed inline-block transform -skew-x-12"></span>
+<span class="w-1 h-3.5 bg-primary-fixed/60 inline-block transform -skew-x-12"></span>
+<span class="font-headline-sm text-headline-sm font-extrabold uppercase tracking-wider text-on-surface">Ludus Gym</span>
+</div>
+<p class="font-label-caps text-label-caps text-primary-fixed flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed animate-ping"></span>
+          HYROX TRAINING HUB
+        </p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-lg bg-surface-container-low border border-white/5 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-variant/40 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 px-margin max-w-4xl mx-auto space-y-6">
+<!-- Category Tabs Selector -->
+<section>
+<div class="flex items-center space-x-2 overflow-x-auto no-scrollbar py-1">
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary-fixed text-on-primary-fixed font-headline-sm text-sm font-bold shadow-[0_0_16px_rgba(195,244,0,0.3)] active:scale-95 transition-all whitespace-nowrap">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span>Clases Hyrox</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container-high/80 text-on-surface-variant border border-white/5 font-headline-sm text-sm font-semibold hover:text-on-surface hover:border-white/10 active:scale-95 transition-all whitespace-nowrap">
+<span class="material-symbols-outlined text-base">timer</span>
+<span>Funcional WOD</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container-high/80 text-on-surface-variant border border-white/5 font-headline-sm text-sm font-semibold hover:text-on-surface hover:border-white/10 active:scale-95 transition-all whitespace-nowrap">
+<span class="material-symbols-outlined text-base">sports_gymnastics</span>
+<span>Open Box</span>
+</button>
+</div>
+</section>
+<!-- Hyrox Official Training Hub Banner -->
+<section class="relative overflow-hidden rounded-xl border border-primary-fixed/30 bg-surface-container-low p-5 shadow-2xl">
+<div class="absolute -right-8 -top-8 w-40 h-40 bg-primary-fixed/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-label-caps font-bold tracking-wider uppercase bg-primary-fixed/20 text-primary-fixed border border-primary-fixed/40">
+              OFICIAL LUDUS HUB
+            </span>
+<span class="flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-label-caps font-bold tracking-wider uppercase bg-secondary-container/20 text-secondary-container border border-secondary-container/40">
+<span class="material-symbols-outlined text-xs">local_fire_department</span> INTENSIDAD PRO
+            </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-extrabold tracking-tight text-white">
+            Hyrox Official Training Hub
+          </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">
+            Programación periodizada para competición y acondicionamiento metabólico con estaciones oficiales de carrera.
+          </p>
+</div>
+<div class="flex items-center gap-3 bg-surface-container/80 p-3 rounded-lg border border-white/5 self-start md:self-auto">
+<div class="text-right">
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Aforo Limitado</p>
+<p class="font-headline-sm text-headline-sm text-primary-fixed font-bold">16 Atletas</p>
+</div>
+<div class="w-10 h-10 rounded bg-primary-fixed/10 border border-primary-fixed/30 flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-2xl">groups</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Weekly Calendar -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-lg">calendar_today</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Octubre 2023</h2>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Semana 43</span>
+</div>
+<!-- Days Carousel Grid -->
+<div class="grid grid-cols-6 gap-2">
+<!-- Lun 23 -->
+<button class="flex flex-col items-center justify-center p-2.5 rounded-lg bg-surface-container border border-white/5 hover:border-white/20 transition-all text-center">
+<span class="font-label-caps text-[10px] text-on-surface-variant">LUN</span>
+<span class="font-metric-numeral-sm text-metric-numeral-sm font-bold text-white my-0.5">23</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+</button>
+<!-- Mar 24 -->
+<button class="flex flex-col items-center justify-center p-2.5 rounded-lg bg-surface-container border border-white/5 hover:border-white/20 transition-all text-center">
+<span class="font-label-caps text-[10px] text-on-surface-variant">MAR</span>
+<span class="font-metric-numeral-sm text-metric-numeral-sm font-bold text-white my-0.5">24</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+</button>
+<!-- Mie 25 (Active / Selected) -->
+<button class="flex flex-col items-center justify-center p-2.5 rounded-lg bg-primary-fixed text-on-primary-fixed border border-primary-fixed shadow-[0_0_18px_rgba(195,244,0,0.35)] scale-105 transition-all text-center">
+<span class="font-label-caps text-[10px] font-bold text-on-primary-fixed tracking-wider">MIÉ</span>
+<span class="font-metric-numeral-sm text-metric-numeral-sm font-extrabold text-on-primary-fixed my-0.5">25</span>
+<span class="text-[9px] font-label-caps font-extrabold tracking-tight bg-black text-primary-fixed px-1 rounded">HOY</span>
+</button>
+<!-- Jue 26 -->
+<button class="flex flex-col items-center justify-center p-2.5 rounded-lg bg-surface-container border border-white/5 hover:border-white/20 transition-all text-center">
+<span class="font-label-caps text-[10px] text-on-surface-variant">JUE</span>
+<span class="font-metric-numeral-sm text-metric-numeral-sm font-bold text-white my-0.5">26</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span>
+</button>
+<!-- Vie 27 -->
+<button class="flex flex-col items-center justify-center p-2.5 rounded-lg bg-surface-container border border-white/5 hover:border-white/20 transition-all text-center">
+<span class="font-label-caps text-[10px] text-on-surface-variant">VIE</span>
+<span class="font-metric-numeral-sm text-metric-numeral-sm font-bold text-white my-0.5">27</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span>
+</button>
+<!-- Sab 28 -->
+<button class="flex flex-col items-center justify-center p-2.5 rounded-lg bg-surface-container border border-white/5 hover:border-white/20 transition-all text-center">
+<span class="font-label-caps text-[10px] text-on-surface-variant">SÁB</span>
+<span class="font-metric-numeral-sm text-metric-numeral-sm font-bold text-white my-0.5">28</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+</button>
+</div>
+</section>
+<!-- Sección: Mis Reservas Activas -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span>
+          Mis Reservas Activas (1)
+        </h2>
+<span class="text-xs font-body-sm text-tertiary-fixed font-semibold">Confirmada</span>
+</div>
+<!-- Active Reservation Card (18:00 AM Class) -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container border border-tertiary-fixed/30 p-4 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.4)]">
+<div class="flex flex-col sm:flex-row justify-between sm:items-center gap-3">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-label-caps font-bold tracking-wider uppercase bg-tertiary-fixed/15 text-tertiary-fixed border border-tertiary-fixed/40">
+                CHECK-IN LISTO
+              </span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">MIÉRCOLES 25 OCT</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-extrabold text-white">
+              18:00 PM · Hyrox Race Conditioning
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Sled Push, Wall Balls &amp; Burpees · Coach Irving Contreras
+            </p>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-center">
+<button class="px-3 py-2 rounded-lg bg-surface-variant text-on-surface hover:text-white font-label-interactive text-xs font-semibold flex items-center gap-1.5 border border-white/5 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">edit_calendar</span>
+<span>Añadir a Calendario</span>
+</button>
+<button class="px-3 py-2 rounded-lg bg-surface-container-high text-error hover:bg-error-container/20 font-label-interactive text-xs font-semibold flex items-center gap-1.5 border border-error/30 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">cancel</span>
+<span>Cancelar (-2h)</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Lista de Clases Disponibles para Hoy -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">
+          Clases Disponibles · Miércoles 25
+        </h2>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Filtro: Todos</span>
+</div>
+<!-- Card 1: 07:00 AM -->
+<div class="rounded-xl bg-surface-container-low border border-white/10 p-4 hover:border-primary-fixed/40 transition-all space-y-3">
+<div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-metric-numeral-sm text-metric-numeral-sm font-black text-white">07:00 AM</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-label-caps font-bold bg-surface-container-highest text-on-surface-variant">60 MIN</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-white mt-1">
+              Hyrox Engine &amp; Erg (SkiErg + Rower)
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Coach: Irving Contreras · Box 01
+            </p>
+</div>
+<div class="flex sm:flex-col items-center sm:items-end justify-between gap-1">
+<span class="font-label-caps text-label-caps text-tertiary-fixed font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span> 6/16 cupos libres
+            </span>
+<button class="px-4 py-2 rounded-lg bg-primary-fixed text-on-primary-fixed font-headline-sm text-xs font-bold hover:shadow-[0_0_12px_rgba(195,244,0,0.4)] active:scale-95 transition-all">
+              Reservar Clase
+            </button>
+</div>
+</div>
+<!-- Progress Bar for Capacity -->
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-fixed h-full rounded-full" style="width: 62.5%;"></div>
+</div>
+</div>
+<!-- Card 2: 18:00 AM (Ya reservado por el socio) -->
+<div class="rounded-xl bg-surface-container border border-primary-fixed/40 p-4 space-y-3 relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary-fixed/15 text-primary-fixed font-label-caps text-[9px] font-extrabold px-3 py-1 rounded-bl-lg border-l border-b border-primary-fixed/30 tracking-wider">
+          TU LUGAR ESTÁ CONFIRMADO
+        </div>
+<div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 pt-2 sm:pt-0">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-metric-numeral-sm text-metric-numeral-sm font-black text-primary-fixed">18:00 PM</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-label-caps font-bold bg-secondary-container/20 text-secondary-container border border-secondary-container/40">
+                ¡ÚLTIMOS 2 LUGARES!
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-white mt-1">
+              Hyrox Race Conditioning
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Sled Push, Wall Balls, Burpees · Coach Irving Contreras
+            </p>
+</div>
+<div class="flex sm:flex-col items-center sm:items-end justify-between gap-1">
+<span class="font-label-caps text-label-caps text-secondary-container font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse"></span> 2/16 cupos disponibles
+            </span>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high border border-primary-fixed/30 text-primary-fixed font-headline-sm text-xs font-bold">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span>Reservado</span>
+</div>
+</div>
+</div>
+<!-- Progress Bar for Capacity -->
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 87.5%;"></div>
+</div>
+</div>
+<!-- Card 3: 19:30 PM -->
+<div class="rounded-xl bg-surface-container-low border border-white/10 p-4 hover:border-primary-fixed/40 transition-all space-y-3">
+<div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-metric-numeral-sm text-metric-numeral-sm font-black text-white">19:30 PM</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-label-caps font-bold bg-surface-container-highest text-on-surface-variant">60 MIN</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-white mt-1">
+              Hyrox Strength &amp; Sled
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Trineo pesado + Zancadas con saco lastrado · Box Central
+            </p>
+</div>
+<div class="flex sm:flex-col items-center sm:items-end justify-between gap-1">
+<span class="font-label-caps text-label-caps text-tertiary-fixed font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span> 8/16 cupos libres
+            </span>
+<button class="px-4 py-2 rounded-lg bg-primary-fixed text-on-primary-fixed font-headline-sm text-xs font-bold hover:shadow-[0_0_12px_rgba(195,244,0,0.4)] active:scale-95 transition-all">
+              Reservar Clase
+            </button>
+</div>
+</div>
+<!-- Progress Bar for Capacity -->
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-fixed h-full rounded-full" style="width: 50%;"></div>
+</div>
+</div>
+</section>
+<!-- Reglas de Aforo y Reserva -->
+<section class="rounded-xl bg-surface-container-lowest border border-outline-variant/30 p-4 space-y-2">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary-fixed text-base">verified_user</span>
+<h4 class="font-headline-sm text-sm font-bold">Normativa del Ludus Box</h4>
+</div>
+<ul class="text-xs font-body-sm text-on-surface-variant space-y-1.5 list-disc list-inside">
+<li>Aforo estrictamente fijado en <strong class="text-white">16 atletas</strong> para garantizar feedback técnico de alto rendimiento.</li>
+<li>Cancelaciones permitidas hasta <strong class="text-white">2 horas previas</strong> a la sesión sin penalización de créditos.</li>
+<li>Check-in en torniquete requerido al menos 10 minutos antes del inicio del bloque de entrenamiento.</li>
+</ul>
+</section>
+</main>
+<!-- BottomNavBar (From Shared Component JSON: 'Reservas' active) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-xs py-space-xs pb-safe bg-surface-container/95 backdrop-blur-xl border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<!-- Item 1: Inicio/QR -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-caps text-label-caps py-1 hover:text-primary-fixed transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl">qr_code_scanner</span>
+<span>Inicio/QR</span>
+</a>
+<!-- Item 2: Rutinas -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-caps text-label-caps py-1 hover:text-primary-fixed transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl">fitness_center</span>
+<span>Rutinas</span>
+</a>
+<!-- Item 3: Reservas (ACTIVE ITEM) -->
+<a class="flex flex-col items-center justify-center text-primary-fixed font-label-caps text-label-caps font-bold py-1 active:scale-95" href="#">
+<div class="relative">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">event_available</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-primary-fixed shadow-[0_0_8px_#c3f400]"></span>
+</div>
+<span>Reservas</span>
+</a>
+<!-- Item 4: Nutrición -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-caps text-label-caps py-1 hover:text-primary-fixed transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl">restaurant</span>
+<span>Nutrición</span>
+</a>
+<!-- Item 5: Admin -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-caps text-label-caps py-1 hover:text-primary-fixed transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl">admin_panel_settings</span>
+<span>Admin</span>
+</a>
+</nav>
+</body></html>
